@@ -21,9 +21,10 @@ import {
   XCircle,
   Loader2
 } from 'lucide-react'
+import { useUserStore } from '@/store/useAuthStore'
 
 export default function DashboardPage() {
-  const { user, profile } = useAuth()
+  const { user, profile,  } = useUserStore()
   const { stats, recentUsers, recentVerifications, isLoading, error } = useDashboard() as {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     stats: any,
