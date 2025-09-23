@@ -18,6 +18,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { useUserStore } from "@/store/useAuthStore"
+import Image from "next/image"
 
 const navigationItems = [
   {
@@ -92,8 +93,14 @@ export function AppSidebar() {
     <Sidebar className="border-r">
       <SidebarHeader className="border-b p-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white font-bold">
-            MC
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 overflow-hidden">
+            <Image
+              src="/MediConnectLogo.jpg"
+              alt="MediConnect Logo"
+              width={40}
+              height={40}
+              className="object-cover w-full h-full"
+            />
           </div>
           <div>
             <h2 className="text-lg font-semibold">MediConnect</h2>
@@ -109,7 +116,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {navigationItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton 
+                  <SidebarMenuButton
                     onClick={() => handleNavigation(item.url)}
                     isActive={pathname === item.url}
                     className="w-full justify-start cursor-pointer"
@@ -163,9 +170,9 @@ export function AppSidebar() {
             </p>
           </div>
         </div>
-        <Button 
-          variant="outline" 
-          size="sm" 
+        <Button
+          variant="outline"
+          size="sm"
           onClick={handleSignOut}
           className="w-full cursor-pointer"
         >
