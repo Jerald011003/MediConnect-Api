@@ -83,7 +83,7 @@ export function AppSidebar() {
   const handleSignOut = async () => {
     try {
       await signOut()
-      router.push('/authentication/login')
+      router.push('/')
     } catch (error) {
       console.error('Sign out error:', error)
     }
