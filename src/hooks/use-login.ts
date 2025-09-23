@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useAuth } from '@/contexts/AuthContext'
 import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
+import { useUserStore } from '@/store/useAuthStore'
 
 interface LoginCredentials {
   email: string
@@ -11,7 +11,7 @@ interface LoginCredentials {
 export const useLogin = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const { signIn } = useAuth()
+  const { signIn } = useUserStore()
   const router = useRouter()
 
   const loginMutation = useMutation({
@@ -19,7 +19,7 @@ export const useLogin = () => {
       return await signIn(email, password)
     },
     onSuccess: () => {
-      router.push('/dashboard')
+      router.push('/')
     },
   })
 

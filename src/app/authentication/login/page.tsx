@@ -6,7 +6,8 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { Loader2, Shield } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
+import Image from 'next/image'
 
 export default function LoginPage() {
   const {
@@ -23,8 +24,14 @@ export default function LoginPage() {
     <Card className="shadow-xl">
       <CardHeader className="space-y-1 text-center">
         <div className="flex justify-center mb-4">
-          <div className="p-3 bg-blue-600 rounded-full">
-            <Shield className="h-8 w-8 text-white" />
+          <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center overflow-hidden">
+            <Image
+              src="/MediConnectLogo.jpg"
+              alt="MediConnect Logo"
+              width={64}
+              height={64}
+              className="object-cover w-full h-full"
+            />
           </div>
         </div>
         <CardTitle className="text-2xl font-bold">MediConnect</CardTitle>
@@ -39,7 +46,7 @@ export default function LoginPage() {
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
-          
+
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -52,7 +59,7 @@ export default function LoginPage() {
               disabled={loading}
             />
           </div>
-          
+
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
             <Input
@@ -65,10 +72,10 @@ export default function LoginPage() {
               disabled={loading}
             />
           </div>
-          
-          <Button 
-            type="submit" 
-            className="w-full" 
+
+          <Button
+            type="submit"
+            className="w-full"
             disabled={loading}
           >
             {loading ? (
@@ -81,7 +88,7 @@ export default function LoginPage() {
             )}
           </Button>
         </form>
-        
+
         <div className="mt-6 text-center text-sm text-gray-600">
           {/* <p>Admin access only</p> */}
           {/* <p className="mt-1">All rights reserved.</p> */}

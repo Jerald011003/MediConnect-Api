@@ -2,7 +2,6 @@
 
 import { Home, Users, UserCog, Shield, LogOut, UsersRound } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
-import { useAuth } from "@/contexts/AuthContext"
 
 import {
   Sidebar,
@@ -18,6 +17,7 @@ import {
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import { useUserStore } from "@/store/useAuthStore"
 
 const navigationItems = [
   {
@@ -73,7 +73,7 @@ const navigationItems = [
 export function AppSidebar() {
   const router = useRouter()
   const pathname = usePathname()
-  const { profile, signOut } = useAuth()
+  const { profile, signOut } = useUserStore()
 
   const handleNavigation = (url: string) => {
     router.push(url)
