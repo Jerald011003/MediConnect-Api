@@ -523,7 +523,7 @@ export default function VerificationsPage() {
                           <CardHeader>
                             <CardTitle className="text-base">{image.label}</CardTitle>
                           </CardHeader>
-                          <CardContent>
+                          {/* <CardContent>
                             <div className="relative w-full h-48">
                               <Image
                                 src={image.url}
@@ -534,7 +534,7 @@ export default function VerificationsPage() {
                                 <ZoomIn className="w-6 h-6 text-white opacity-0 hover:opacity-100 transition-opacity" />
                               </div>
                             </div>
-                          </CardContent>
+                          </CardContent> */}
                         </Card>
                       ))}
                     </div>
