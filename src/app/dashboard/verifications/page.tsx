@@ -32,7 +32,6 @@ import {
   ChevronRight,
   Shield,
   FileText,
-  ZoomIn,
   Image as ImageIcon,
   Settings,
   MoreHorizontal,
